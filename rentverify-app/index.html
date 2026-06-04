@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="RentVerify — Simple, secure guest identity verification for property guardians." />
+    <meta name="theme-color" content="#f8f9ff" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>RentVerify — Guest Verification</title>
+    <link rel="icon" type="image/png" href="/crazy_app_icon.png" />
+    <link rel="apple-touch-icon" href="/crazy_app_icon.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#0b1c30",
+                        "primary": "#002046",
+                        "tertiary-fixed": "#ffddb9",
+                        "on-primary-fixed-variant": "#2e476f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#c6965e",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#465f88",
+                        "tertiary-fixed-dim": "#f1bd81",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary": "#321c00",
+                        "surface-bright": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed": "#001a40",
+                        "tertiary-container": "#4f2f00",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c6cf",
+                        "primary-fixed": "#d6e3ff",
+                        "secondary-fixed": "#d7e2ff",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-secondary-container": "#003370",
+                        "inverse-primary": "#aec7f7",
+                        "inverse-surface": "#213145",
+                        "secondary": "#115cb9",
+                        "primary-fixed-dim": "#aec7f7",
+                        "primary-container": "#1b365d",
+                        "on-tertiary-fixed-variant": "#623f0f",
+                        "on-primary-fixed": "#001b3d",
+                        "surface": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "error": "#ba1a1a",
+                        "outline": "#74777f",
+                        "on-secondary-fixed-variant": "#004491",
+                        "on-primary-container": "#87a0cd",
+                        "on-surface-variant": "#44474e",
+                        "secondary-container": "#659dfe",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#acc7ff",
+                        "on-surface": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "touch-target-min": "48px",
+                        "gutter": "16px",
+                        "container-margin": "20px",
+                        "stack-gap-md": "16px",
+                        "stack-gap-lg": "32px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+  </head>
+  <body class="bg-surface min-h-screen pb-24 text-on-surface">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
