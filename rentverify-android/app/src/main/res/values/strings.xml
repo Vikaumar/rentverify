@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RentVerify</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_pending">Pending</string>
+    <string name="nav_audit">Audit</string>
+    <string name="nav_invite">Invite</string>
+    <string name="nav_profile">Profile</string>
+    <string name="login_title">Property Guardian</string>
+    <string name="login_subtitle">Secure guest verification system</string>
+    <string name="login_username_hint">Username</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button">Sign In</string>
+    <string name="login_biometric">Use Biometrics</string>
+    <string name="approve">Approve</string>
+    <string name="reject">Reject</string>
+    <string name="flag">Flag</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="search_hint">Search guests…</string>
+    <string name="no_results">No results found</string>
+    <string name="offline_mode">Offline Mode</string>
+    <string name="syncing">Syncing…</string>
+    <string name="connected">Connected</string>
+</resources>
