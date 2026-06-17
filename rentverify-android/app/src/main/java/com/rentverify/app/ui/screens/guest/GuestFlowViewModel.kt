@@ -3,6 +3,7 @@ package com.rentverify.app.ui.screens.guest
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rentverify.app.data.remote.dto.AuditEventDto
+import com.rentverify.app.data.remote.dto.GuestSubmission
 import com.rentverify.app.data.remote.dto.VerificationDto
 import com.rentverify.app.data.repository.AuditRepository
 import com.rentverify.app.data.repository.VerificationRepository
@@ -74,7 +75,8 @@ class GuestFlowViewModel @Inject constructor(
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                val record = verificationRepo.getByToken(token)
+                val result = verificationRepo.getByToken(token)
+                val record = result.getOrNull()
                 if (record != null) {
                     // Extract country code if present in phone (e.g. "+91 9876543210")
                     val phoneParts = record.guestPhone.split(" ", limit = 2)
@@ -168,10 +170,10 @@ class GuestFlowViewModel @Inject constructor(
 
                 if (token != null) {
                     // Update verification on server
-                    val result = verificationRepo.submitGuestVerification(token, mapOf(
-                        "selfieData" to data.selfieData,
-                        "idImageData" to data.idImageData,
-                        "idType" to data.idType
+                    val result = verificationRepo.submitGuest(token, GuestSubmission(
+                        selfieData = data.selfieData,
+                        idImageData = data.idImageData,
+                        idType = data.idType
                     ))
                     if (result.isSuccess) {
                         val record = result.getOrNull()
@@ -207,11 +209,13 @@ class GuestFlowViewModel @Inject constructor(
                         reviewedBy = null,
                         rejectionReason = null,
                         flagReason = null,
-                        guardianNote = null
+                        guardianNote = null,
+                        linkToken = "",
+                        linkExpiresAt = ""
                     )
 
                     // Write locally
-                    val result = verificationRepo.createLocal(newVerification)
+                    val result = verificationRepo.create(newVerification)
                     if (result.isSuccess) {
                         // Generate Audit Timeline Events
                         val events = listOf(

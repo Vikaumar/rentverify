@@ -5,6 +5,7 @@ import androidx.compose.ui.graphics.Color
 // ── Primary Brand Colors (matching CSS #6c63ff, #3f37c9) ──────────
 val Purple500 = Color(0xFF6C63FF)
 val Purple700 = Color(0xFF3F37C9)
+val Purple300 = Color(0xFF8A84FF)
 val Purple200 = Color(0xFFA29BFE)
 
 // ── Accent Colors ─────────────────────────────────────────────────

@@ -21,12 +21,13 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         // Backend API base URL — change to your server IP for physical device testing
-        buildConfigField("String", "API_BASE_URL", "\"http://10.0.2.2:3001/api\"")
+        buildConfigField("String", "API_BASE_URL", "\"http://10.83.43.194:3001/api\"")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = true
+            buildConfigField("String", "API_BASE_URL", "\"https://api.rentverify.com/api\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -91,6 +92,9 @@ dependencies {
 
     // ── Biometric Authentication ──────────────────────────
     implementation("androidx.biometric:biometric:1.1.0")
+
+    // ── ExifInterface (EXIF rotation correction) ─────────
+    implementation("androidx.exifinterface:exifinterface:1.3.7")
 
     // ── Coil Image Loading ────────────────────────────────
     implementation("io.coil-kt:coil-compose:2.7.0")

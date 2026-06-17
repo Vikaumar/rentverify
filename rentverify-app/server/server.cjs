@@ -713,10 +713,12 @@ app.get('/api/export', authenticateToken, async (req, res) => {
 // ─── Start Server ─────────────────────────────────────────────────
 async function start() {
   await connectDB();
-  app.listen(PORT, () => {
-    console.log(`\n🚀 RentVerify API Server running on http://localhost:${PORT}`);
-    console.log(`   Health: http://localhost:${PORT}/api/health`);
-    console.log(`   Mode:   ${isConnected ? '☁️  Cloud (MongoDB Atlas)' : '💾 Offline (Demo Mode)'}\n`);
+  app.listen(PORT, '0.0.0.0', () => {
+    const localIp = getLocalIpAddress();
+    console.log(`\n🚀 RentVerify API Server running on http://0.0.0.0:${PORT}`);
+    console.log(`   Local:   http://localhost:${PORT}/api/health`);
+    console.log(`   Network: http://${localIp}:${PORT}/api/health`);
+    console.log(`   Mode:    ${isConnected ? '☁️  Cloud (MongoDB Atlas)' : '💾 Offline (Demo Mode)'}\n`);
   });
 }
 
